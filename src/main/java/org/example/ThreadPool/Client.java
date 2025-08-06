@@ -20,9 +20,14 @@ public class Client
         // ThreadPool, Queue, mechanism, Allocation
 
         ExecutorService executorService = Executors.newFixedThreadPool(10);
-        for(int i = 1; i<=100; i++){
+
+        ExecutorService es = Executors.newCachedThreadPool();
+        for(int i = 1; i<=100000; i++){
             NumberPrinter numberPrinter = new NumberPrinter(i);
-            executorService.execute(numberPrinter);
+            if(i ==50){
+                System.out.println("I am here");
+            }
+            es.execute(numberPrinter);
         }
 
         executorService.shutdown();
