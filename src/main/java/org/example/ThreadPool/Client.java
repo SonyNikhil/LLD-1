@@ -24,9 +24,13 @@ public class Client
         ExecutorService es = Executors.newCachedThreadPool();
         for(int i = 1; i<=100000; i++){
             NumberPrinter numberPrinter = new NumberPrinter(i);
+
+            //debugger point
             if(i ==50){
                 System.out.println("I am here");
             }
+
+//            executorService.execute(numberPrinter);
             es.execute(numberPrinter);
         }
 
