@@ -18,13 +18,15 @@ public class Client
 
         ExecutorService es = Executors.newCachedThreadPool();
 
-        SorterClass sorter = new SorterClass(arrToSort);
+        SorterClass sorter = new SorterClass(arrToSort, es);
 
         Future<ArrayList<Integer>> sortedArrayFuture = es.submit(sorter);
 
         ArrayList<Integer> sortedArray = sortedArrayFuture.get();
 
         System.out.println(sortedArray);
+
+
 
         /** Till now we are creating new ExecutorService for every task.
          *  We can use a single thread pool to run all the tasks.

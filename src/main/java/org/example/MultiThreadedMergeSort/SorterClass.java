@@ -9,8 +9,13 @@ public class SorterClass implements Callable<ArrayList<Integer>>
 
     private ArrayList<Integer> arrToSort;
 
-    public SorterClass(ArrayList<Integer> arr){
+    // sending thread pool from client class.
+
+    ExecutorService es;
+
+    public SorterClass(ArrayList<Integer> arr, ExecutorService es){
         this.arrToSort = arr;
+        this.es = es;
     }
     @Override
     public ArrayList<Integer> call()throws Exception{
@@ -34,14 +39,14 @@ public class SorterClass implements Callable<ArrayList<Integer>>
         }
 
 
-        SorterClass leftSorter = new SorterClass(left);
-        SorterClass rightSorter = new SorterClass(right);
+        SorterClass leftSorter = new SorterClass(left, es);
+        SorterClass rightSorter = new SorterClass(right, es);
 
         //Runnable -> es.execute;
         //when callable is used, call submit.
         //Create thread pool, submit callable to thread pool, wait for result
 
-        ExecutorService es = Executors.newCachedThreadPool();
+//        ExecutorService es = Executors.newCachedThreadPool();
 
         /**
          * What submit does:
