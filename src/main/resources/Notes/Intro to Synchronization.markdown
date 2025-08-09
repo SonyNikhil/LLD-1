@@ -9,4 +9,9 @@
 5. Pass the same lock object with Thread pool to the Adder and Subtractor.
 6. Where to use the lock? Either outside of for loop or inside of for loop.
 7. Think where and why?
-8. 
+
+
+## Producer Consumer Problem 
+
+---
+
