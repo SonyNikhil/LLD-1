@@ -31,4 +31,14 @@
 ```
 
 7. Because we are already passing limit to the semaphore and it will always check if prodSema + consSema <= limit passed.
-8. 
+
+## We will still get error
+
+---
+
+1. Because the critical section in removeItem() is not handled properly.
+2. We need to use some concurrent and thread safe data structure.
+3. We need to use ConcurrentLinkedQueue.
+4. Now only removeItem part is synchronized.
+5. And in rest other part multiple threads are working at the same time.
+6. But in remove part only one thread is working at a time.
