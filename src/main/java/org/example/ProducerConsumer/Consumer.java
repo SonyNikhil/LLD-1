@@ -13,12 +13,9 @@ public class Consumer implements Runnable{
     public void run(){
         while(true)
         {
-            synchronized (store) {  // Implicit lock on store object
-
-                //Only one thread can access the store at a time
-                if (store.getItems().size() > 0) {
-                    store.removeItem();
-                }
+            if(store.getItems().size()>0)
+            {
+                store.removeItem();
             }
         }
     }

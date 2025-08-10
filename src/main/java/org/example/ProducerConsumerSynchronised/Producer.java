@@ -1,4 +1,4 @@
-package org.example.ProducerConsumer;
+package org.example.ProducerConsumerSynchronised;
 
 public class Producer implements Runnable{
 
@@ -13,9 +13,11 @@ public class Producer implements Runnable{
 
         while(true)
         {
+            synchronized (store) {
                 if (store.getItems().size() < store.getMaxSize()) {
                     store.addItem();
                 }
+            }
         }
     }
 }

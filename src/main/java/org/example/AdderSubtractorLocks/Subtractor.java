@@ -23,6 +23,7 @@ public class Subtractor implements Callable<Void>
             count.value = count.value - 1;
             lock.unlock();
         }
+
         System.out.println("Subtractor is done -> "+ count.value);
         return null;
     }

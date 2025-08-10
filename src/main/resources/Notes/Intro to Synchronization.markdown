@@ -11,7 +11,24 @@
 7. Think where and why?
 
 
-## Producer Consumer Problem 
+## Producer Consumer Semaphores Problem 
 
 ---
 
+1. Create 2 Semaphores in client, prodSema and ConsSema -> prodSema size is 5 and consSema size is 0.
+2. Send both the Semaphores to the Producer and Consumer.
+3. Why are we sending both the Sema to producer and consumer?
+4. Because Producer need to do prod-- and cons++ after producing one product.
+5. and consumer need to do cons-- and prod++ after consuming one product.
+6. We don't need this condition check in the producer - 
+```java
+ while(true)
+        {
+                if (store.getItems().size() < store.getMaxSize()) {
+                    store.addItem();
+                }
+        }
+```
+
+7. Because we are already passing limit to the semaphore and it will always check if prodSema + consSema <= limit passed.
+8. 
