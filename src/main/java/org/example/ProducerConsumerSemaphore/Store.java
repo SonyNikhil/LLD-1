@@ -32,7 +32,7 @@ public class Store {
     public void removeItem()
     {
         System.out.println("Consumer is removing item" + this.items.size());
-        this.items.remove();
+        this.items.remove(); // it will automatically remove last element
 
 //        this.items.remove(this.items.size()-1);
         // All the threads will read -> 5-1 = 4th index item and try to remove that.

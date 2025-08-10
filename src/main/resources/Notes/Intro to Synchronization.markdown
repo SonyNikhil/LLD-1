@@ -42,3 +42,14 @@
 4. Now only removeItem part is synchronized.
 5. And in rest other part multiple threads are working at the same time.
 6. But in remove part only one thread is working at a time.
+
+
+## Adder Subtractor Atomic
+
+---
+
+1. If we use Atomic Integer instead of normal int then we won't get mutithreading issue.
+2. We need to use addAndGet internal method ofAtomic integer.
+3. How it works internally is that it will use Compare and swap algorithm, same like ConcurrentLinkedQueue.
+4. Now we are not getting any error.
+5. it will store value in a memory x also along with register and then compare if x == value or not before updating from register.
