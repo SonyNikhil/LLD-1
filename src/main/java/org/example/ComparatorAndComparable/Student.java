@@ -21,6 +21,18 @@ public class Student implements Comparable<Student>
     public String getName() { return name; }
     public double getAttendance() { return attendance; }
 
+    // Custom toString method
+    @Override
+    public String toString()
+    {
+        return "Student{" +
+                "age=" + age +
+                ", psp=" + psp +
+                ", name='" + name + '\'' +
+                ", attendance=" + attendance +
+                '}';
+    }
+
 
     //Sort in descending order of age
     @Override
@@ -40,5 +52,8 @@ public class Student implements Comparable<Student>
         else{
             return 0;
         }
+
+        // Another way to write this code
+        //return this.age-other.age;
     }
 }

@@ -21,7 +21,7 @@ public class Client
         students.add(new Student(20, 53.0, "David", 92.0));
         students.add(new Student(18, 52.0, "Eve", 93.0));
 
-        System.out.println(students);
+        System.out.println(students.toString());
         Collections.sort(students);
 
         System.out.println(students);
