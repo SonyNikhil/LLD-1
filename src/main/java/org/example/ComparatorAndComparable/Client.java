@@ -26,5 +26,8 @@ public class Client
 
         System.out.println(students);
 
+        Collections.sort(students, new StudentPspComparator());
+        System.out.println(students);
+
     }
 }
