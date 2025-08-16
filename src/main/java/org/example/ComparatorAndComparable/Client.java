@@ -1,10 +1,7 @@
 package org.example.ComparatorAndComparable;
 
 import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Client
 {
@@ -26,8 +23,14 @@ public class Client
 
         System.out.println(students);
 
-        Collections.sort(students, new StudentPspComparator());
+        Comparator<Student> s2 = (o1, o2) -> {
+            return (int)(o1.getPsp() - o2.getPsp());
+        };
+        Collections.sort(students, s2);
         System.out.println(students);
+
+//        Collections.sort(students, new StudentPspComparator());
+//        System.out.println(students);
 
     }
 }

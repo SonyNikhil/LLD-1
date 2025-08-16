@@ -42,7 +42,40 @@ public class Client
 
         //---------------------------------------------------------------------------------------------------//
 
-        //Lambda Expression
+        //Lambda Expression - It is valid only in functional interfaces.
+
+        Runnable r1 = () -> {
+            System.out.println("Hey from Lambda Expression");
+        };
+
+        Thread t2 = new Thread(r1);
+        t2.start();
+
+        Comparator<Integer> cmp1 = (element1, element2) -> {
+            if(element1 > element2){
+                return 1;
+            }
+            else if(element1 < element2){
+                return -1;
+            }
+            else{
+                return 0;
+            }
+
+            // Another way to write this code
+            //return element1-element2;
+        };
+
+        //Passing lambda expression to thread by directly creating where argument is expected.
+        Thread t3 = new Thread(() -> {
+            System.out.println("Hey from Lambda Expression, creating a runnable directly. It's mapping to runnable abstract method.");
+        });
+
+        Thread t4 = new Thread( ()  -> System.out.println("Another way of creating runnable"));
+
+
+
+
 
 
 
